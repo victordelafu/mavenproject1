@@ -2,12 +2,13 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package PrimeraEvaluacion.UD1;
+package PrimeraEvaluacion.UD1.ej2;
 
 /**
  *
- * @author Alumno
+ * @author Víctor de la fuente
  */
+
 public class Persona {
     //: nombre, edad, DNI, sexo (H hombre, M mujer), peso y altura
     private String nombre;
@@ -71,6 +72,12 @@ public class Persona {
 
     public void setAltura(double altura) {
         this.altura = altura;
+    }
+
+    public Persona(String nombre, int edad, char sexo) {
+        this.nombre = nombre;
+        this.edad = edad;
+        this.sexo = sexo;
     }
     
 }
