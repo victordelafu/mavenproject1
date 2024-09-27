@@ -79,5 +79,8 @@ public class Persona {
         this.edad = edad;
         this.sexo = sexo;
     }
-    
+    @Override
+    public String toString() {
+      return "Persona: "+nombre+", Edad: "+edad+"años de edad, DNI:"+ DNI+", sexo: "+sexo+", peso: "+peso+", altura: "+altura;
+    }
 }
