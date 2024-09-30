@@ -79,8 +79,17 @@ public class Persona {
         this.edad = edad;
         this.sexo = sexo;
     }
+    public boolean calcularEdad(int edad) {
+        if (edad >= 18) {
+            System.out.println(nombre+"Es mayor de edad, tiene: "+edad+" años");
+            return true;
+        } else {
+            System.out.println("Es menor");
+            return false;
+        }
+    }
     @Override
     public String toString() {
-      return "Persona: "+nombre+", Edad: "+edad+"años de edad, DNI:"+ DNI+", sexo: "+sexo+", peso: "+peso+", altura: "+altura;
+      return "Persona: "+nombre+", Edad: "+edad+" años de edad, DNI:"+ DNI+", sexo: "+sexo+", peso: "+peso+", altura: "+altura;
     }
 }

@@ -64,28 +64,65 @@ public class PersonaApp {
     }
 
     private static void darDeAlta() {
-        do{
-            
-        }while(true);
+        do {
+            System.out.println("Introduce nombre");
+            String nombre = entrada.next();
+            System.out.println("Introduce edad");
+            int edad = entrada.nextInt();
+            if (edad < 0) {
+                System.out.println("Introduce una cantidad válida");
+                break;
+            }
+            System.out.println("Introduce DNI");
+            String dni = entrada.next();
+            System.out.println("Introduce sexo");
+            char sexo = (char) entrada.nextByte();
+            System.out.println("Introduce peso");
+            double peso = entrada.nextDouble();
+            System.out.println("Introduce altura en cm");
+            int altura = entrada.nextInt();
+            personas.add(new Persona(nombre, edad, dni, sexo, peso, altura));
+            System.out.println("Quieres introducir mas personas?----'Si o no'");
+            String eleccion = entrada.next();
+            if (eleccion.equalsIgnoreCase("no")) {
+                break;
+            }
+        } while (true);
     }
 
     private static void mostrarPersonas() {
-        
+        System.out.println("Las cuentas creadas hasta el momento son: ");
+        for (Persona p : personas) {
+            System.out.println(p);
+        }
     }
 
     private static void mayoroMenor() {
-        
+        System.out.println("Introduce una persona para saber si es mayor o menor de edad");
+        boolean encontrado = false;
+        do {
+            String nombre = entrada.next();
+            for (Persona p : personas) {
+                if (p.getNombre().equals(nombre)) {
+                    encontrado = true;
+                    p.calcularEdad(p.getEdad());
+                    break;
+                } else {
+                    System.out.println("Esa persona no existe en la base de datos");
+                }
+            }
+        }while(!encontrado);
     }
 
     private static void calcularPesoIdeal() {
-        
+
     }
 
     private static void comprobarSexo() {
-        
+
     }
 
     private static void generarDNI() {
-        
+
     }
 }
