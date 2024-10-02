@@ -17,10 +17,10 @@ public class PersonaApp {
     static ArrayList<Persona> personas = new ArrayList();
 
     public static void main(String[] args) {
-        personas.add(new Persona("victor", 25, "05961264D", 'H', 115, 188));
-        personas.add(new Persona("carmen", 21, "05966624F", 'M', 70, 160));
-        personas.add(new Persona("jesus", 54, "05961264D", 'H', 87, 165));
-        System.out.println("---BIENVENIDO AL BANCO MAS FIABLE DEL MUNDO---");
+        personas.add(new Persona("victor", 25, "", 'H', 115, 1.88));
+        personas.add(new Persona("carmen", 21, "", 'M', 70, 1.60));
+        personas.add(new Persona("jesus", 54, "", 'H', 87, 1.65));
+        System.out.println("---ESCOGE UNA OPCION---");
         boolean continuar = true;
         while (continuar) {
             System.out.println("""
@@ -79,8 +79,8 @@ public class PersonaApp {
             char sexo = (char) entrada.nextByte();
             System.out.println("Introduce peso");
             double peso = entrada.nextDouble();
-            System.out.println("Introduce altura en cm");
-            int altura = entrada.nextInt();
+            System.out.println("Introduce altura en metros");
+            double altura = entrada.nextDouble();
             personas.add(new Persona(nombre, edad, dni, sexo, peso, altura));
             System.out.println("Quieres introducir mas personas?----'Si o no'");
             String eleccion = entrada.next();
@@ -98,31 +98,86 @@ public class PersonaApp {
     }
 
     private static void mayoroMenor() {
-        System.out.println("Introduce una persona para saber si es mayor o menor de edad");
+        
         boolean encontrado = false;
         do {
+            System.out.println("Introduce una persona para saber si es mayor o menor de edad");
             String nombre = entrada.next();
             for (Persona p : personas) {
                 if (p.getNombre().equals(nombre)) {
                     encontrado = true;
                     p.calcularEdad(p.getEdad());
                     break;
-                } else {
-                    System.out.println("Esa persona no existe en la base de datos");
+                }
+
+            }
+            if (!encontrado) {
+                System.out.println("Esa persona no existe en la base de datos");
+            }
+        } while (!encontrado);
+    }
+
+    private static void calcularPesoIdeal() {
+        boolean encontrado = false;
+        do{
+            System.out.println("Introduce una persona para saber si esta en un peso adecuado");
+            String nombre= entrada.next();
+            for (Persona p : personas) {
+                if (p.getNombre().equals(nombre)) {
+                    encontrado = true;
+                    int imc = p.calcularPeso(p.getPeso());
+                    switch (imc) {
+                        case -1:
+                            System.out.println(nombre+" Tiene peso inferior a lo ideal");
+                            break;
+                        case 0:
+                            System.out.println(nombre+" tiene peso ideal");
+                            break;
+                        case 1:
+                            System.out.println(nombre+" tiene sobrepeso");
+                            break;
+                        default:
+                            break;
+                    }
+                    break;
+                }
+
+            }
+            if (!encontrado) {
+                System.out.println("Esa persona no existe en la base de datos");
+            }
+        }while(!encontrado);
+    }
+
+    private static void comprobarSexo() {
+        boolean encontrado = false;
+        do{
+            System.out.println("Introduce una persona para saber si esta en un peso adecuado");
+            String nombre= entrada.next();
+            for (Persona p : personas) {
+                if (p.getNombre().equals(nombre)) {
+                    encontrado = true;
+                    p.verSexo(p.getSexo());
+                    break;
                 }
             }
         }while(!encontrado);
     }
 
-    private static void calcularPesoIdeal() {
-
-    }
-
-    private static void comprobarSexo() {
-
-    }
-
     private static void generarDNI() {
-
+        boolean encontrado = false;
+        do{
+            System.out.println("Introduce una persona para generarle un DNI aleatorio");
+            String nombre= entrada.next();
+            for(Persona p : personas){
+                if(p.getNombre().equals(nombre)){
+                    encontrado= true;
+                    String nuevoDNI = p.generarDNI();
+                    p.setDNI(nuevoDNI);
+                    System.out.println("DNI generado para " + nombre + ": " + nuevoDNI);
+                    break;
+                }
+            }
+        }while(!encontrado);
     }
 }
