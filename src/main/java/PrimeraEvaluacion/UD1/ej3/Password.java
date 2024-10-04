@@ -15,8 +15,40 @@ public class Password {
 
     private int longitud;
     private String contraseña;
-    private final static int LongitudDefecto = 8;
+    private int id;
 
+    public boolean isEsFuerte() {
+        return esFuerte;
+    }
+
+    public static Random getRandom() {
+        return random;
+    }
+
+    public static void setRandom(Random random) {
+        Password.random = random;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public void setEsFuerte(boolean esFuerte) {
+        this.esFuerte = esFuerte;
+    }
+
+    public Password( int id, int longitud, String contraseña) {
+        this.longitud = longitud;
+        this.contraseña = contraseña;
+        this.id = id;
+    }
+    private final static int LongitudDefecto = 8;
+    private boolean esFuerte;
+    
     public static int getLongitudDefecto() {
         return LongitudDefecto;
     }
@@ -43,7 +75,7 @@ public class Password {
     }
     @Override
     public String toString(){
-        return "la contraseña con longitud: "+longitud+" es: "+contraseña;
+        return "ID: " + id + ", Longitud: " + longitud + ", Contraseña: " + contraseña + ", Es fuerte: " + esFuerte;
     }
     
 }

@@ -13,19 +13,32 @@ import java.util.Scanner;
  * @author Alumno
  */
 public class PasswordApp {
+
     static Random random = new Random();
     static Scanner entrada = new Scanner(System.in);
     static ArrayList<Password> contraseña = new ArrayList();
+    static ArrayList<Password> contraseñaFuerte = new ArrayList();
 
     public static void main(String[] args) {
-        contraseña.add(new Password(5, "01234"));
-        contraseña.add(new Password(5, "98765"));
-        contraseña.add(new Password(3, "567"));
-        System.out.println("---BIENVENIDO AL SISTEMA DE GESTIÓN DE CONTRASEÑAS---");
-        System.out.println("Escoge una opción:\n1->Generar Contraseña\n2->Ver fuerza de la contraseña");
+        contraseña.add(new Password(1, 5, "01234"));
+        contraseña.add(new Password(2, 5, "98765"));
+        contraseña.add(new Password(3, 3, "567"));
+        int eleccion;
+        do {
 
-    }
-
+            System.out.println("---BIENVENIDO AL SISTEMA DE GESTIÓN DE CONTRASEÑAS---");
+            System.out.println("Escoge una opción:\n1->Generar Contraseña\n2->Ver fuerza de la contraseña");
+            eleccion = entrada.nextInt();
+            switch (eleccion) {
+                case 1:
+                    generarContraseña();
+                    break;
+                case 2:
+                    listarContraseñas();
+                    break;
+            }
+        }while(eleccion!=3);
+        }
     public static void generarContraseña() {
         boolean generado = false;
         do {
@@ -44,7 +57,7 @@ public class PasswordApp {
     }
 
     private static String generarContra(int longitud) {
-        String caracteresPermitidos = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+        String caracteresPermitidos = "ABCDEabcde0123456789";
         StringBuilder contraseña = new StringBuilder(longitud);
         for (int i = 0; i < longitud; i++) {
             int index = random.nextInt(caracteresPermitidos.length());
@@ -52,4 +65,30 @@ public class PasswordApp {
         }
         return contraseña.toString();
     }
+
+    public boolean esFuerte(String contraseña) {
+        int numeros = 0;
+        int mayusculas = 0;
+        int minusculas = 0;
+        for (char c : contraseña.toCharArray()) {
+            if (Character.isDigit(c)) {
+                numeros++;
+            } else if (Character.isUpperCase(c)) {
+                mayusculas++;
+            } else if (Character.isLowerCase(c)) {
+                minusculas++;
+            }
+        }
+        boolean esFuerte = numeros >= 5 && mayusculas >= 2 && minusculas >= 1;
+        //Password.setEsFuerte(esFuerte);
+        return esFuerte;
+    }
+
+    public static void listarContraseñas() {
+        System.out.println("Lista de todas las contraseñas:");
+        for (Password p : contraseña) {
+            System.out.println(p.toString());
+        }
+    }
 }
+
