@@ -30,7 +30,7 @@ public class VisualizarCarpetas {
                 String comando = entrada.nextLine();  // Leemos toda la línea
 
                 // Si el usuario ingresa 'exit', salimos del bucle
-                if ("exit".equalsIgnoreCase(comando)) {
+                if (comando.equalsIgnoreCase("exit")) {
                     realizado = true;
                     break;
                 }
