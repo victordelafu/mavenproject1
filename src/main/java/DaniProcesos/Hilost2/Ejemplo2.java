@@ -28,7 +28,7 @@ public class Ejemplo2 extends Thread{
             h.setName("Hilo_"+i);
             h.setPriority(i+1);
             h.start();
-            System.out.println("Información del "+h.getName()+": "+ h.toString());
+            System.out.println("InformaciOn del "+h.getName()+": "+ h.toString());
         }
         System.out.println("3 hilos creados...");
         System.out.println("Hilos activos: "+Thread.activeCount());
