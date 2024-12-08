@@ -1,4 +1,4 @@
-package DaniProcesos;
+package DaniProcesos.ActDani;
 
 import java.io.BufferedReader;
 import java.io.IOException;
