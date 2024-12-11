@@ -107,6 +107,7 @@ public class Examen {
                     turnoMezclador.acquire();
                     // Espera a que alguien eche colores en la mezcladora.
                     mezclador.lock();
+                    System.out.println("La mezcladora ha quedado bloqueada para que no puedan echar mas pintura");
                     // Bloquea el acceso a la mezcladora para iniciar la mezcla.
                     try {
                         System.out.println("Mezcladora iniciando mezcla");
@@ -127,7 +128,7 @@ public class Examen {
 
         private void mezclarColores() throws InterruptedException {
             Thread.sleep(ThreadLocalRandom.current().nextInt(1000, 2001));
-            // Simula el tiempo de mezcla (entre 1 s y 2 s).
+            // Simula el tiempo de mezcla (entre 1 s y 2 s)
         }
     }
 }
