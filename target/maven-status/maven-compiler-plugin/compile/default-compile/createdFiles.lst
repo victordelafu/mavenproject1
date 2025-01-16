@@ -20,6 +20,7 @@ HilosDavid\PrimerosEjemplos\EjemploRunnable_2.class
 HilosDavid\MetodosHilos\BlockingQueueEjemplo.class
 HilosDavid\PrimerosEjemplos\Tarea.class
 HilosDavid\MetodosHilos\ScheduleExecutor.class
+HilosDavid\MetodosHilos\CountDownLatchEjemplo.class
 HilosDavid\PrimerosEjemplos\PlanificadorTareas.class
 HilosDavid\PrimerosEjemplos\HiloSimple.class
 HilosDavid\PrimerosEjemplos\otraClase.class
