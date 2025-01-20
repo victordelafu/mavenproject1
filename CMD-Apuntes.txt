@@ -1,0 +1,4 @@
+Codigos cmd-> 
+1- ping google.com
+2-tracert google.com
+3-netstat -an

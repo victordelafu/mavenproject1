@@ -1,5 +1,0 @@
-Tenemos 3 depósitos de pintura con cian, magenta y amarillo. 3 personas se encargaron de preparar colores secundarios: rojo(Amarillo y magenta), azul(cian y magenta) y vede(amarillo y cian). Para preparar un color una persona debe cargar 2 cubos de los colores correspondientes.
-Teniendo en cuenta que solo hay 2 cubos y que solo los puede usar una persona a la vez:
-Implementar cada persona como un hilo. Cada vez que una persona coge los cubos tarda entre medio segundo y un segundo en cargar los cubos.
-Los colores tardan entre 1 y 2 segundos en mezclarse.
-No se pueden hacer varias mezclas a la vez, se hacen de una en una.
