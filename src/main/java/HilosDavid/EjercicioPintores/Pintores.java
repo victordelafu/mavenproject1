@@ -6,7 +6,7 @@ import java.util.concurrent.Semaphore;
 public class Pintores {
 
     public static void main(String[] args) {
-
+        
         for (int i = 0; i < 4; i++) {
             Runnable naranja = new color("Rojo", "Amarillo", "Naranja");
             Runnable turquesa = new color("Azul", "Cian", "Turquesa");
