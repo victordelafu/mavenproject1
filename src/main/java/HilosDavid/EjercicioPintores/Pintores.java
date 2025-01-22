@@ -2,15 +2,15 @@ package HilosDavid.EjercicioPintores;
 
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.Semaphore;
-
 public class Pintores {
+    
 
     public static void main(String[] args) {
-        
+        CountDownLatch latch = new CountDownLatch(3*4);
         for (int i = 0; i < 4; i++) {
-            Runnable naranja = new color("Rojo", "Amarillo", "Naranja");
-            Runnable turquesa = new color("Azul", "Cian", "Turquesa");
-            Runnable lima = new color("Verde", "Amarillo", "Lima");
+            Runnable naranja = new color("Rojo", "Amarillo", "Naranja",latch);
+            Runnable turquesa = new color("Azul", "Cian", "Turquesa",latch);
+            Runnable lima = new color("Verde", "Amarillo", "Lima",latch);
 
             Thread vitin = new Thread(naranja, "Vitín");
             Thread pauloncio = new Thread(turquesa, "Pauloncio");
@@ -22,6 +22,16 @@ public class Pintores {
             espera();
             jaime.start();
             espera();
+            
+        }
+        try {
+            latch.await();
+            System.out.println("Todos los colores se han gastado");
+            Thread.sleep(2000);
+            System.out.println("La casa se ha terminado de pintar");
+        } catch (InterruptedException ex) {
+            System.out.println("El hilo se ha interrumpido " + ex.getMessage());
+            ex.printStackTrace();
         }
     }
 
@@ -41,12 +51,14 @@ class color implements Runnable {
     private String color2;
     private String colorFinal;
     private static Semaphore semaphore = new Semaphore(1);
-    private static CountDownLatch latch = new CountDownLatch(12);
+    private CountDownLatch latch;
 
-    public color(String color1, String color2, String colorFinal) {
+
+    public color(String color1, String color2, String colorFinal, CountDownLatch latch) {
         this.color1 = color1;
         this.color2 = color2;
         this.colorFinal = colorFinal;
+        this.latch = latch;
     }
 
     @Override
@@ -65,15 +77,7 @@ class color implements Runnable {
             latch.countDown();
         }
 
-        try {
-            latch.await();
-            System.out.println("Todos los colores se han gastado");
-            Thread.sleep(2000);
-            System.out.println("La casa se ha terminado de pintar");
-        } catch (InterruptedException ex) {
-            System.out.println("El hilo se ha interrumpido " + ex.getMessage());
-            ex.printStackTrace();
-        }
+        
     }
 }
 
