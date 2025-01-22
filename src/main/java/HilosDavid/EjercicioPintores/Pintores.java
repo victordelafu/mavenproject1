@@ -33,6 +33,7 @@ public class Pintores {
             System.out.println("El hilo se ha interrumpido " + ex.getMessage());
             ex.printStackTrace();
         }
+        
     }
 
     private static void espera() {
