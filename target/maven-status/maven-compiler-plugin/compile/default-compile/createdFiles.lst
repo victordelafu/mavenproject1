@@ -5,6 +5,7 @@ HilosDavid\EjercicioPintores\Pintores.class
 com\mycompany\mavenproject1\Mavenproject1.class
 HilosDavid\EjercicioPintores\color.class
 DaniProcesos\Hilost2\Ejemplo2.class
+ConexiónDeRedes\TCPBIDIRECCIONAL\Cliente.class
 HilosDavid\PrimerosEjemplos\Programa.class
 HilosDavid\clase2\CallebeleYFutureEjemplo.class
 HilosDavid\PrimerosEjemplos\EjemploRunnable_2.class
@@ -12,6 +13,7 @@ HilosDavid\MetodosHilos\ScheduleExecutor.class
 HilosDavid\PrimerosEjemplos\otraClase.class
 PrimeraEvaluacion\UD1\ej3\PasswordApp.class
 HilosDavid\PrimerosEjemplos\HiloSimple$Tarea.class
+ConexiónDeRedes\TCPBIDIRECCIONAL\Servidor.class
 ConexiónDeRedes\sockets\ClienteTCP.class
 ConexiónDeRedes\sockets\ClienteUDP.class
 PrimeraEvaluacion\UD1\Cuenta.class
