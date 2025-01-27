@@ -13,6 +13,7 @@ HilosDavid\MetodosHilos\ScheduleExecutor.class
 HilosDavid\PrimerosEjemplos\otraClase.class
 PrimeraEvaluacion\UD1\ej3\PasswordApp.class
 HilosDavid\PrimerosEjemplos\HiloSimple$Tarea.class
+ConexiónDeRedes\TareaConexioneseHilos\Servidor.class
 ConexiónDeRedes\TCPBIDIRECCIONAL\Servidor.class
 ConexiónDeRedes\sockets\ClienteTCP.class
 ConexiónDeRedes\sockets\ClienteUDP.class
@@ -38,5 +39,6 @@ HilosDavid\PrimerosEjemplos\PlanificadorTareas.class
 ConexiónDeRedes\sockets\ServidorTCP.class
 ConexiónDeRedes\URLConnectionExample.class
 HilosDavid\PrimerosEjemplos\HiloSimple.class
+ConexiónDeRedes\TareaConexioneseHilos\Cliente.class
 ConexiónDeRedes\sockets\socketEjemplo.class
 HilosDavid\clase2\HiloIncrementador.class
