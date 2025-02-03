@@ -11,4 +11,13 @@
         <maven.compiler.target>19</maven.compiler.target>
         <exec.mainClass>com.mycompany.mavenproject1.Mavenproject1</exec.mainClass>
     </properties>
+    <dependencies>
+        <dependency>
+            <groupId>uk.co.caprica</groupId>
+            <artifactId>vlcj</artifactId>
+            <version>5.0.0-M2</version> <!-- Ajusta según tu versión -->
+            <type>jar</type>
+        </dependency>
+    </dependencies>
+
 </project>
