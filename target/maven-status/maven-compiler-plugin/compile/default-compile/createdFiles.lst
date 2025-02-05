@@ -11,6 +11,8 @@ HilosDavid\clase2\CallebeleYFutureEjemplo.class
 HilosDavid\PrimerosEjemplos\EjemploRunnable_2.class
 HilosDavid\MetodosHilos\ScheduleExecutor.class
 HilosDavid\PrimerosEjemplos\otraClase.class
+ConexiónDeRedes\ConexionesSSLTCP\ClienteSSLTCP.class
+HilosDavid\Multicast\Multicast.class
 PrimeraEvaluacion\UD1\ej3\PasswordApp.class
 HilosDavid\PrimerosEjemplos\HiloSimple$Tarea.class
 ConexiónDeRedes\TareaConexioneseHilos\Servidor.class
@@ -28,6 +30,7 @@ HilosDavid\PrimerosEjemplos\ejemploAnonima$1.class
 PrimeraEvaluacion\UD1\ej2\PersonaApp.class
 HilosDavid\PrimerosEjemplos\Multihilo$tarea.class
 HilosDavid\MetodosHilos\SemaphoreEjemplo.class
+ConexiónDeRedes\TareaConexioneseHilos\Cliente1.class
 HilosDavid\clase2\SincronizacionEjemplo.class
 HilosDavid\MetodosHilos\ReentraLockEjemplo.class
 PrimeraEvaluacion\UD1\CuentaApp.class
@@ -35,9 +38,11 @@ HilosDavid\MetodosHilos\BlockingQueueEjemplo.class
 HilosDavid\PrimerosEjemplos\Tarea.class
 ConexiónDeRedes\sockets\ServidorUDP.class
 HilosDavid\MetodosHilos\CountDownLatchEjemplo.class
+ConexiónDeRedes\TareaConexioneseHilos\Cliente2.class
 HilosDavid\PrimerosEjemplos\PlanificadorTareas.class
 ConexiónDeRedes\sockets\ServidorTCP.class
 ConexiónDeRedes\URLConnectionExample.class
 HilosDavid\PrimerosEjemplos\HiloSimple.class
+ConexiónDeRedes\ConexionesSSLTCP\ServidorSSLTCP.class
 ConexiónDeRedes\sockets\socketEjemplo.class
 HilosDavid\clase2\HiloIncrementador.class
